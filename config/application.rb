@@ -17,12 +17,10 @@ end
 
 module Bidder
   class Application < Rails::Application
-
-    # don't generate RSpec tests for views and helpers
     config.generators do |g|
-      g.view_specs false
-      g.helper_specs false
-      
+      g.test_framework :rspec, fixture: true, helper_specs: false, view_specs: false
+      g.fixture_replacement :fabrication
+      g.template_engine :haml
     end
 
     # Settings in config/environments/* take precedence over those specified here.
@@ -32,6 +30,7 @@ module Bidder
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
     config.autoload_paths += %W(#{config.root}/lib)
+    config.autoload_paths += Dir["#{config.root}/lib/**/"]
 
 
     # Only load the plugins named here, in the order given (default is alphabetical).
