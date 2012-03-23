@@ -1,9 +1,7 @@
 source :rubygems
 
-require 'rbconfig'
-HOST_OS = RbConfig::CONFIG['host_os']
+gem 'rails', '~> 3.2.2'
 
-gem 'rails', '3.2.2'
 gem "unicorn"
 
 group :assets do
@@ -28,29 +26,8 @@ gem "carrierwave"
 gem "bootstrap-sass", ">= 2.0.1"
 
 group :development do
-  gem "heroku"
-  gem "haml-rails"
-
-  gem "guard", ">= 0.6.2"
-  gem "guard-bundler", ">= 0.1.3"
-  gem "guard-rails", ">= 0.0.3"
-  gem "guard-spork"
-  gem "guard-rspec", ">= 0.4.3"
-
-  case HOST_OS
-    when /darwin/i
-      gem 'rb-fsevent'
-      gem 'growl'
-    when /linux/i
-      gem 'libnotify'
-      gem 'rb-inotify'
-    when /mswin|windows/i
-      gem 'rb-fchange'
-      gem 'win32console'
-      gem 'rb-notifu'
-    else
-      puts "Unknown host os for guard notifier"
-  end
+  gem "heroku", require: false
+  gem "haml-rails", require: false
 end
 
 group :test do
@@ -68,11 +45,25 @@ group :test do
   gem "email_spec", ">= 1.2.1"
 end
 
-group :production, :test do
-  gem 'thin'
-end
-
 group :development, :test do
   gem "pry"
   gem "rspec-rails", ">= 2.8.1"
+
+  gem 'jasminerice'
+  gem 'jasmine'
+end
+
+group :development_helpers do
+  gem "guard", ">= 0.6.2", require: false
+  gem "guard-bundler", ">= 0.1.3", require: false
+  gem "guard-rails", ">= 0.0.3", require: false
+  gem "guard-spork", require: false
+  gem "guard-rspec", ">= 0.4.3", require: false
+  gem "guard-jasmine", require: false
+
+  gem 'rb-fsevent', require: false
+
+  gem 'growl', require: false
+  gem 'libnotify', require: false
+  gem 'rb-inotify', require: false
 end
