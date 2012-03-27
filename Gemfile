@@ -68,6 +68,10 @@ group :test do
   gem "email_spec", ">= 1.2.1"
 end
 
+group :production, :test do
+  gem 'thin'
+end
+
 group :development, :test do
   gem "pry"
   gem "rspec-rails", ">= 2.8.1"
