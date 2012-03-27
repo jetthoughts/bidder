@@ -11,6 +11,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem "emberjs-rails"
 
 gem "haml", ">= 3.1.4"
 
@@ -43,6 +44,8 @@ group :test do
 
   gem "mongoid-rspec", ">= 1.4.4"
   gem "email_spec", ">= 1.2.1"
+
+  gem "thin"
 end
 
 group :development, :test do

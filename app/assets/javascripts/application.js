@@ -12,5 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require ember
 //= require bootstrap
-//= require_tree .
+
+//= require app
+//= require_tree ./models
+//= require_tree ./controllers
+//= require_tree ./views
+//= require_tree ./helpers
+//= require_tree ./templates
