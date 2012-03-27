@@ -1,7 +1,9 @@
-require 'guard/jasmine/task'
+if Rails.env.development?
+  require 'guard/jasmine/task'
 
-desc "Run the code examples in spec/javascript"
-Guard::JasmineTask.new
+  desc "Run the code examples in spec/javascript"
+  Guard::JasmineTask.new
 
-desc "Run RSpec and Jasmine specs"
-task full_spec: [:spec, :"guard:jasmine"]
+  desc "Run RSpec and Jasmine specs"
+  task full_spec: [:spec, :"guard:jasmine"]
+end
