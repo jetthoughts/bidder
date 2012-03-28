@@ -28,12 +28,28 @@ gem "bootstrap-sass", ">= 2.0.1"
 
 group :development do
   gem "unicorn-rails"
+
   gem "heroku", require: false
   gem "haml-rails", require: false
+
+  gem "guard", ">= 0.6.2", require: false
+  gem "guard-bundler", ">= 0.1.3", require: false
+  gem "guard-rails", ">= 0.0.3", require: false
+  gem "guard-spork", require: false
+  gem "guard-rspec", ">= 0.4.3", require: false
+  gem "guard-jasmine", require: false
+
+  gem 'rb-fsevent', require: false
+
+  gem 'growl', require: false
+  gem 'libnotify', require: false
+  gem 'rb-inotify', require: false
 end
 
 group :test do
-  gem "spork"
+  gem "spork", require: false
+
+  gem "thin"
 
   gem "capybara"
   gem "capybara-webkit"
@@ -53,19 +69,4 @@ group :development, :test do
 
   gem 'jasminerice'
   gem 'jasmine'
-end
-
-group :development_helpers do
-  gem "guard", ">= 0.6.2", require: false
-  gem "guard-bundler", ">= 0.1.3", require: false
-  gem "guard-rails", ">= 0.0.3", require: false
-  gem "guard-spork", require: false
-  gem "guard-rspec", ">= 0.4.3", require: false
-  gem "guard-jasmine", require: false
-
-  gem 'rb-fsevent', require: false
-
-  gem 'growl', require: false
-  gem 'libnotify', require: false
-  gem 'rb-inotify', require: false
 end
