@@ -3,7 +3,6 @@ source :rubygems
 gem 'rails', '~> 3.2.2'
 
 gem "unicorn"
-gem "thin"
 
 group :assets do
   gem 'sass-rails', '>= 3.2.3'
@@ -28,6 +27,7 @@ gem "carrierwave"
 gem "bootstrap-sass", ">= 2.0.1"
 
 group :development do
+  gem "unicorn-rails"
   gem "heroku", require: false
   gem "haml-rails", require: false
 end
