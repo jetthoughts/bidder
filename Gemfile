@@ -3,6 +3,7 @@ source :rubygems
 gem 'rails', '~> 3.2.2'
 
 gem "unicorn"
+gem "thin"
 
 group :assets do
   gem 'sass-rails', '>= 3.2.3'
@@ -44,8 +45,6 @@ group :test do
 
   gem "mongoid-rspec", ">= 1.4.4"
   gem "email_spec", ">= 1.2.1"
-
-  gem "thin"
 end
 
 group :development, :test do
