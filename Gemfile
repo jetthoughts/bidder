@@ -49,8 +49,6 @@ end
 group :test do
   gem "spork", require: false
 
-  gem "thin"
-
   gem "capybara"
   gem "capybara-webkit"
   gem "simplecov", :require => false
