@@ -1,6 +1,6 @@
 source :rubygems
 
-gem 'rails', '~> 3.2'
+gem 'rails', '> 3.2.0'
 
 gem "unicorn"
 
@@ -15,7 +15,7 @@ gem "emberjs-rails"
 
 gem "haml", ">= 3.1.4"
 
-gem 'mongoid'
+gem "mongoid", "~> 3.0.0"
 gem 'bson_ext'
 
 gem "devise", ">= 2.0.4"

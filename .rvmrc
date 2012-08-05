@@ -1,0 +1,5 @@
+rvm use --create 1.9.3@bidder
+
+if ! command -v bundle ; then
+  gem install bundler
+fi

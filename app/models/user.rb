@@ -6,14 +6,14 @@ class User
          :recoverable, :rememberable, :trackable, :validatable
 
   ## Database authenticatable
-  field :email,              :type => String, :null => false, :default => ""
-  validates_uniqueness_of :email, :case_sensitive => false, :if => :email_changed?
+  field :email, type: String, default: ""
+  validates_uniqueness_of :email, case_sensitive: false, if: :email_changed?
 
-  field :encrypted_password, :type => String, :null => false, :default => ""
+  field :encrypted_password, type: String, default: ""
 
   ## Recoverable
-  field :reset_password_token,   :type => String
-  field :reset_password_sent_at, :type => Time
+  field :reset_password_token, type: String
+  field :reset_password_sent_at, type: Time
 
   ## Rememberable
   field :remember_created_at, :type => Time
